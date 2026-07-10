@@ -4,8 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(Rigidbody2D))]
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour{
     public PlayerInput input;
 
     public PlayerMovement movement;
@@ -16,8 +15,7 @@ public class PlayerController : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
     }
 
-    void Update()
-    {
+    void Update(){
         movement.Move(input.axis);
     }
 }

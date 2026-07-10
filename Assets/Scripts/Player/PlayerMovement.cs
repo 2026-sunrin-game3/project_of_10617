@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rigid;
-    
+
     public float moveSpeed = 3f, jumpPower = 12f;
+
     [SerializeField] LayerMask groundMask_;
     [SerializeField] float groundDist_ = 0.5f;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -14,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(Vector2 axis)
     {
-        transform.Translate(axis.normalized * moveSpeed * Time.deltaTime);
+        transform.Translate(axis.normalized * Time.deltaTime);
     }
 
     public void SetVelocity(Vector2 dir)
@@ -25,15 +27,15 @@ public class PlayerMovement : MonoBehaviour
     public bool OnGround()
     {
         Vector2 center = transform.position + Vector3.down * groundDist_ * 0.5f;
-        Vector2 size = new Vector3(0.3f, groundDist_);
+        Vector2 size = new Vector3(0,3f, groundDist_);
         Collider2D[] cast = Physics2D.OverlapBoxAll(center, size, 0f, groundMask_);
 
         return cast.Length > 0;
     }
 
-    public void OnJump()
+    public void Jump()
     {
-        if (OnGround())
+        if(OnGround())
             SetVelocity(Vector2.up * jumpPower);
     }
 
