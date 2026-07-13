@@ -1,9 +1,9 @@
-using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class EntityHealth : MonoBehaviour
-{  
+{
     EntityStat stat;
 
     public float health, maxHealth;
@@ -13,31 +13,26 @@ public class EntityHealth : MonoBehaviour
     public struct Context
     {
         public float damage;
-        
         public EntityHealth attacker;
-        
         public bool canceled;
     }
 
     List<Action<Context>> onDamageEv = new();
-
     List<Action<Context>> onGiveDamageEv = new();
-
     List<Action<Context>> onDeathEv = new();
 
     void Start()
     {
         stat = GetComponent<EntityStat>();
         ResetHealth();
-        
     }
 
     public void ResetHealth()
     {
         health = maxHealth;
     }
-    
-    public void OnDamage(Action<Context> action)
+
+    public void Ondamage(Action<Context> action)
     {
         onDamageEv.Add(action);
     }
@@ -52,13 +47,10 @@ public class EntityHealth : MonoBehaviour
         onDeathEv.Add(action);
     }
 
-
     public void GetDamage(float damage, EntityHealth attacker = null)
     {
         if (isDeath)
-        {
             return;
-        }
 
         Context ctx = new Context();
         ctx.damage = damage;
@@ -76,7 +68,8 @@ public class EntityHealth : MonoBehaviour
             critPer = attacker.stat.GetResultValue("critPer");
             critMul = attacker.stat.GetResultValue("critMul");
             inc = attacker.stat.GetResultValue("increaseDamage");
-            foreach (var c in attacker.onDamageEv)
+
+            foreach (var c in attacker.onGiveDamageEv)
             {
                 c.Invoke(ctx);
             }
@@ -87,18 +80,16 @@ public class EntityHealth : MonoBehaviour
             return;
         }
 
-        float dmg = ctx.damage * (1 + stat.GetResultValue("hurtDamage")/100); 
+        float dmg = ctx.damage * (1 + stat.GetResultValue("hurtDamage") / 100);
 
         if (UnityEngine.Random.Range(0, 100) <= critPer)
-            dmg += 1 + critMul/100;
-
+            dmg *= 1 + critMul / 100;
         health -= damage;
 
         if (health <= 0)
         {
             isDeath = true;
 
-            
             foreach (var c in onDeathEv)
             {
                 c.Invoke(ctx);

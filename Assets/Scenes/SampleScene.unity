@@ -947,7 +947,7 @@ MonoBehaviour:
   defaultAttack:
     offset: {x: 2, y: 0.63}
     size: {x: 5, y: 3}
-    drawGizmos: 0
+    drawGizmos: 1
   enemyMask:
     serializedVersion: 2
     m_Bits: 64

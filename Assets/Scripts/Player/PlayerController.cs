@@ -9,8 +9,7 @@ public class PlayerController : MonoBehaviour{
 
     public PlayerMovement movement;
 
-    void Start()
-    {
+    void Start(){
         input = GetComponent<PlayerInput>();
         movement = GetComponent<PlayerMovement>();
     }
