@@ -7,6 +7,7 @@ public enum MathType
     Add,
     Remove
 }
+
 public class EntityStat : MonoBehaviour
 {
     Dictionary<string, float> baseValue = new();
@@ -18,6 +19,8 @@ public class EntityStat : MonoBehaviour
         public MathType mathType;
         public float Value;
     }
+    [System.Serializable]
+    
     struct StatValue
     {
         public string Key;
@@ -44,10 +47,12 @@ public class EntityStat : MonoBehaviour
             Calc(val.Key);
         }
     }
+
     public float GetResultValue(string key)
     {
         return resultValue[key];
     }
+
 
     public float Calc(string key)
     {
