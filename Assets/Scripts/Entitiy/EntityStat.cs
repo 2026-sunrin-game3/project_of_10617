@@ -26,7 +26,9 @@ public class EntityStat : MonoBehaviour
         public string Key;
         public float Value;
     }
+
     [SerializeField]
+
     List<StatValue> defaultStat = new()
     {
         new StatValue{Key="attackDamage", Value=3},
@@ -53,6 +55,11 @@ public class EntityStat : MonoBehaviour
         return resultValue[key];
     }
 
+    
+    public float GetBaseValue(string key)
+    {
+        return baseValue[key];
+    }
 
     public float Calc(string key)
     {

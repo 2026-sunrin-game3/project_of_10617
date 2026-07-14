@@ -4,28 +4,38 @@ using UnityEngine.InputSystem;
 public class PlayerInput : MonoBehaviour{
     private PlayerMovement movement;
     PlayerBattle battle;
+    PlayerAnimator animator;
 
     public Vector2 axis;
 
-    void Awake(){
+    void Awake()
+    {
         movement = GetComponent<PlayerMovement>();
         battle = GetComponent<PlayerBattle>();
+        animator = GetComponent<PlayerAnimator>();
     }
 
-    public void OnMove(InputValue value){
+    public void OnMove(InputValue value)
+    {
         Vector2 axis_ = value.Get<Vector2>();
         axis = new Vector2(axis_.x, 0);
     }
 
-    public bool HasAxis(){
+    public bool HasAxis()
+    {
         return axis.x != 0 || axis.y != 0;
     }
 
-    public void OnJump(){
-        movement.Jump();
+    public void OnJump()
+    {
+        if (movement.Jump())
+           movement.Jump();
+        animator.Jump();
     }
 
-    public void OnAttack(){
+    public void OnAttack()
+    {
         battle.Attack();
+        animator.Play("Attack1");
     }
 }
