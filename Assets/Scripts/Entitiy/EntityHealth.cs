@@ -32,7 +32,7 @@ public class EntityHealth : MonoBehaviour
         health = maxHealth;
     }
 
-    public void Ondamage(Action<Context> action)
+    public void OnDamage(Action<Context> action)
     {
         onDamageEv.Add(action);
     }
