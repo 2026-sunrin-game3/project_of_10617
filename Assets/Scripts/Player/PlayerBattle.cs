@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 
 [System.Serializable]
@@ -21,11 +22,12 @@ public class PlayerBattle : MonoBehaviour
 
 
     public AttackRange defaultAttack;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     [SerializeField] LayerMask enemyMask;
     [SerializeField] float dashPower,dashTime;
     [SerializeField] DamageIndicator indicator;
     public bool inDash;
+    [SerializeField] Slider healthbar;
     void Start()
     {
         health = GetComponent<EntityHealth>();
@@ -43,6 +45,7 @@ public class PlayerBattle : MonoBehaviour
     }
 
     void Update(){
+        healthbar.value = health.health / health.maxHealth;
         if (atkCool > 0)
             atkCool -= Time.deltaTime*(1+stat.GetResultValue("atkSpeed")/100);
     }

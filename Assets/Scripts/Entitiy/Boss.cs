@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : Enemy
 {
@@ -25,6 +26,7 @@ public class Boss : Enemy
     float retreatTimer;
 
     bool inPattern;
+    [SerializeField] Slider bossbar;
 
     void Awake()
     {
@@ -36,6 +38,7 @@ public class Boss : Enemy
     // Update is called once per frame
     protected override void MobUpdate()
     {
+        bossbar.value =  health.health / health.maxHealth;
         if (dashCool > 0)
             dashCool -= Time.deltaTime;
         if (jumpCool > 0)

@@ -4,7 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rigid;
     EntityStat stat;
-    public float jumpPower = 12f;
+    public float jumpPower = 15f;
     [SerializeField] LayerMask groundMask_;
     [SerializeField] float groundDist_ = 0.5f;
 
