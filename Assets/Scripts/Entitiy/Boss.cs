@@ -164,17 +164,17 @@ public class Boss : Enemy
         if (blasterPrefab == null)
             return;
 
-        // Use the player's current side directly rather than the `direction`
-        // field, which SetFacing only updates at the end of MobUpdate and so
-        // would still be lagging one frame behind here.
         float facing = player.transform.position.x > transform.position.x ? 1 : -1;
 
         Vector2 spawnPos = blasterSpawnPoint != null
             ? (Vector2)blasterSpawnPoint.position
             : (Vector2)transform.position + Vector2.right * facing * 3f;
 
+        // Hand it the player's Transform (not a one-shot direction) so it can
+        // keep tracking them for the whole charge-up instead of committing to
+        // wherever they were the instant it spawned.
         GasterBlaster blaster = Instantiate(blasterPrefab, spawnPos, Quaternion.identity);
-        blaster.Init(new Vector2(facing, 0), stat.GetResultValue("attackDamage"), health, enemyMask);
+        blaster.Init(player.transform, stat.GetResultValue("attackDamage"), health, enemyMask);
     }
 
     void SetFacing(float dir)
