@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: 78b8509f22c39a84a84b7860fe67096f
+guid: ab542bffab202a14c9c2aa2566f04036
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -4174422893889586770
-    second: sprite_normalized (7)_0
+    second: Jumping_0
   - first:
       213: -3131127851778551944
-    second: sprite_normalized (7)_1
+    second: Jumping_1
   - first:
       213: 458572007806898392
-    second: sprite_normalized (7)_2
+    second: Jumping_2
   - first:
       213: 7878132313344189296
-    second: sprite_normalized (7)_3
+    second: Jumping_3
   - first:
       213: 4339724595757488658
-    second: sprite_normalized (7)_4
+    second: Jumping_4
   - first:
       213: 7574390108927682579
-    second: sprite_normalized (7)_5
+    second: Jumping_5
   - first:
       213: 1862090141235623397
-    second: sprite_normalized (7)_6
+    second: Jumping_6
   - first:
       213: -3986735662938760294
-    second: sprite_normalized (7)_7
+    second: Jumping_7
   - first:
       213: -4667805294323386924
-    second: sprite_normalized (7)_8
+    second: Jumping_8
   - first:
       213: -4943684387208579368
-    second: sprite_normalized (7)_9
+    second: Jumping_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -123,37 +123,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_normalized (7)_0
+      name: Jumping_0
       rect:
         serializedVersion: 2
         x: 0
@@ -163,7 +137,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -171,11 +145,11 @@ TextureImporter:
       spriteID: ea9f37bbe787116c0800000000000000
       internalID: -4174422893889586770
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_normalized (7)_1
+      name: Jumping_1
       rect:
         serializedVersion: 2
         x: 191
@@ -185,7 +159,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -193,11 +167,11 @@ TextureImporter:
       spriteID: 87f4868eecffb84d0800000000000000
       internalID: -3131127851778551944
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_normalized (7)_2
+      name: Jumping_2
       rect:
         serializedVersion: 2
         x: 382
@@ -207,7 +181,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -215,11 +189,11 @@ TextureImporter:
       spriteID: 8d0944dbfcc2d5600800000000000000
       internalID: 458572007806898392
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_normalized (7)_3
+      name: Jumping_3
       rect:
         serializedVersion: 2
         x: 573
@@ -229,7 +203,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -237,11 +211,11 @@ TextureImporter:
       spriteID: 073286e499fb45d60800000000000000
       internalID: 7878132313344189296
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_normalized (7)_4
+      name: Jumping_4
       rect:
         serializedVersion: 2
         x: 764
@@ -251,7 +225,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -259,11 +233,11 @@ TextureImporter:
       spriteID: 21a9629e68cc93c30800000000000000
       internalID: 4339724595757488658
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_normalized (7)_5
+      name: Jumping_5
       rect:
         serializedVersion: 2
         x: 955
@@ -273,7 +247,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -281,11 +255,11 @@ TextureImporter:
       spriteID: 318edd85ca3ad1960800000000000000
       internalID: 7574390108927682579
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_normalized (7)_6
+      name: Jumping_6
       rect:
         serializedVersion: 2
         x: 1146
@@ -295,7 +269,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -303,11 +277,11 @@ TextureImporter:
       spriteID: 5e53b102e1977d910800000000000000
       internalID: 1862090141235623397
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_normalized (7)_7
+      name: Jumping_7
       rect:
         serializedVersion: 2
         x: 1337
@@ -317,7 +291,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -325,11 +299,11 @@ TextureImporter:
       spriteID: a9b572589054ca8c0800000000000000
       internalID: -3986735662938760294
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_normalized (7)_8
+      name: Jumping_8
       rect:
         serializedVersion: 2
         x: 1528
@@ -339,7 +313,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -347,11 +321,11 @@ TextureImporter:
       spriteID: 4d5ba2fd0df983fb0800000000000000
       internalID: -4667805294323386924
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_normalized (7)_9
+      name: Jumping_9
       rect:
         serializedVersion: 2
         x: 1719
@@ -361,7 +335,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -369,37 +343,37 @@ TextureImporter:
       spriteID: 8d6b9ca1e31846bb0800000000000000
       internalID: -4943684387208579368
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     outline: []
-    customData: 
+    customData:
     physicsShape: []
     bones: []
     spriteID: 0cba6803fe04a2a49acb94fc1a042057
     internalID: 0
     vertices: []
-    indices: 
+    indices:
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":191.0,"y":226.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":191.0,"y":226.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotUnitMode":0,"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      sprite_normalized (7)_0: -4174422893889586770
-      sprite_normalized (7)_1: -3131127851778551944
-      sprite_normalized (7)_2: 458572007806898392
-      sprite_normalized (7)_3: 7878132313344189296
-      sprite_normalized (7)_4: 4339724595757488658
-      sprite_normalized (7)_5: 7574390108927682579
-      sprite_normalized (7)_6: 1862090141235623397
-      sprite_normalized (7)_7: -3986735662938760294
-      sprite_normalized (7)_8: -4667805294323386924
-      sprite_normalized (7)_9: -4943684387208579368
-  mipmapLimitGroupName: 
+      Jumping_0: -4174422893889586770
+      Jumping_1: -3131127851778551944
+      Jumping_2: 458572007806898392
+      Jumping_3: 7878132313344189296
+      Jumping_4: 4339724595757488658
+      Jumping_5: 7574390108927682579
+      Jumping_6: 1862090141235623397
+      Jumping_7: -3986735662938760294
+      Jumping_8: -4667805294323386924
+      Jumping_9: -4943684387208579368
+  mipmapLimitGroupName:
   pSDRemoveMatte: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:

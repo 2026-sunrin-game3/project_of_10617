@@ -461,6 +461,7 @@ GameObject:
   - component: {fileID: 534865755}
   - component: {fileID: 534865756}
   - component: {fileID: 534865757}
+  - component: {fileID: 534865758}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -481,7 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityHealth
   health: 0
-  maxHealth: 100
+  maxHealth: 1
   isDeath: 0
 --- !u!212 &534865752
 SpriteRenderer:
@@ -532,8 +533,8 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -626698263, guid: 4c27879af2627bb4ba535bda4a863097, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -691,23 +692,30 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     size: {x: 3, y: 3}
     drawGizmos: 1
-  dashRange: 5
-  dashPower: 12
-  dashDuration: 0.4
-  dashCoolTime: 3
-  dashAttack:
-    offset: {x: 0, y: 0}
-    size: {x: 0, y: 0}
-    drawGizmos: 0
-  jumpPower: 7
-  fallSpeed: 25
-  jumpCoolTime: 6
-  jumpAttack:
-    offset: {x: 0, y: 0}
-    size: {x: 0, y: 0}
-    drawGizmos: 0
   retreatTime: 0.6
   bossbar: {fileID: 1147242102}
+--- !u!95 &534865758
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534865750}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85d2d400e961ba32754e5143adb04671, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage:
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &553431697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,12 +1892,12 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -626698263, guid: 38f6c5153267ca049851780b12cd6e7c, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: 4c27879af2627bb4ba535bda4a863097, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.73, y: 3.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2050,13 +2058,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4323077, y: 0.56153846}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2.73, y: 3.59}
+    newSize: {x: 2.73, y: 3.59}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.64832646, y: 2.73341104}
+  m_Size: {x: 1.6483265, y: 2.733411}
   m_EdgeRadius: 0
 --- !u!114 &2145458454
 MonoBehaviour:
@@ -2086,6 +2094,8 @@ MonoBehaviour:
   indicator: {fileID: -7756483507888994229, guid: cac21ed8cfe01f649ad67260617432cf, type: 3}
   inDash: 0
   healthbar: {fileID: 1435852785}
+  krFill: {fileID: 0}
+  krDrainRate: 0.15
 --- !u!114 &2145458455
 MonoBehaviour:
   m_ObjectHideFlags: 0
