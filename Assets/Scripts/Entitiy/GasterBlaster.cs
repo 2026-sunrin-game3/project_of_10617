@@ -7,10 +7,10 @@ public class GasterBlaster : MonoBehaviour
     [SerializeField] float fireTime = 0.3f;
     [SerializeField] Vector2 beamSize = new Vector2(22f, 1.2f);
     [SerializeField] SpriteRenderer beamVisual;
-    // Where the mouth actually opens, in the skull art's native (unflipped,
-    // snout-right) local space, relative to the sprite's center pivot - so
-    // the beam starts from inside the jaw instead of the skull's center.
-    [SerializeField] Vector2 muzzleOffset = new Vector2(1.15f, -0.57f);
+    // Drag this child object (in the prefab, native/unflipped orientation)
+    // so it sits exactly on the mouth opening in the Scene view - much more
+    // reliable than guessing a numeric offset from screenshots.
+    [SerializeField] Transform muzzlePoint;
 
     Transform target;
     Vector2 fireDir = Vector2.right;
@@ -57,18 +57,26 @@ public class GasterBlaster : MonoBehaviour
         sprite.flipX = fireDir.x < 0;
     }
 
+    Vector2 MuzzlePosition()
+    {
+        if (muzzlePoint == null)
+            return transform.position;
+
+        // flipX only mirrors the X axis, so mirror the offset's X to match
+        // rather than the Y (the mouth's height above/below center doesn't
+        // change when flipped left/right).
+        Vector2 localOffset = muzzlePoint.localPosition;
+        Vector2 facingOffset = new Vector2(sprite.flipX ? -localOffset.x : localOffset.x, localOffset.y);
+        return (Vector2)transform.position + facingOffset;
+    }
+
     IEnumerator FireRoutine()
     {
         yield return new WaitForSeconds(chargeTime);
         fired = true;
 
         float angle = Mathf.Atan2(fireDir.y, fireDir.x) * Mathf.Rad2Deg;
-
-        // flipX only mirrors the X axis, so mirror the offset's X to match
-        // rather than the Y (the mouth's height above/below center doesn't
-        // change when flipped left/right).
-        Vector2 facingOffset = new Vector2(sprite.flipX ? -muzzleOffset.x : muzzleOffset.x, muzzleOffset.y);
-        Vector2 muzzlePos = (Vector2)transform.position + facingOffset;
+        Vector2 muzzlePos = MuzzlePosition();
 
         if (beamVisual != null)
         {
@@ -93,5 +101,14 @@ public class GasterBlaster : MonoBehaviour
 
         yield return new WaitForSeconds(fireTime);
         Destroy(gameObject);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (muzzlePoint == null)
+            return;
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawSphere(muzzlePoint.position, 0.1f);
     }
 }
