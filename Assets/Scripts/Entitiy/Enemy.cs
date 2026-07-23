@@ -78,7 +78,7 @@ public abstract class Enemy : MonoBehaviour
             EntityHealth hp = target.GetComponent<EntityHealth>();
             if (hp != null)
             {
-                hp.GetDamage(stat.GetResultValue("attackDamage"), health, range.karmaAmount);
+                hp.GetDamage(stat.GetResultValue("attackDamage"), health, range.isKarmaAttack);
             }
         }
     }

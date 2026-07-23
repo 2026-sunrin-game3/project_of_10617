@@ -15,7 +15,7 @@ public class EntityHealth : MonoBehaviour
         public float damage;
         public EntityHealth attacker;
         public bool canceled;
-        public int karmaAmount;
+        public float karmaAmount;
     }
 
     List<Action<Context>> onDamageEv = new();
@@ -48,17 +48,34 @@ public class EntityHealth : MonoBehaviour
         onDeathEv.Add(action);
     }
 
-    public void GetDamage(float damage, EntityHealth attacker = null, int karmaAmount = 0)
+    public void GetDamage(float damage, EntityHealth attacker = null, bool isKarma = false)
     {
         if (isDeath)
             return;
 
-        Context ctx = new Context();
-        ctx.damage = damage;
-        ctx.attacker = attacker;
-        ctx.karmaAmount = karmaAmount;
-
         float critPer = 0, critMul = 0, inc = 0;
+
+        if (attacker != null)
+        {
+            critPer = attacker.stat.GetResultValue("critPer");
+            critMul = attacker.stat.GetResultValue("critMul");
+            inc = attacker.stat.GetResultValue("increaseDamage");
+        }
+
+        float dmg = damage * (1 + stat.GetResultValue("hurtDamage") / 100) * (1 + inc / 100);
+
+        if (UnityEngine.Random.Range(0, 100) <= critPer)
+            dmg *= 1 + critMul / 100;
+
+        dmg -= stat.GetResultValue("defense");
+
+        if (dmg < 0)
+            dmg = 0;
+
+        Context ctx = new Context();
+        ctx.damage = dmg;
+        ctx.attacker = attacker;
+        ctx.karmaAmount = isKarma ? dmg : 0;
 
         foreach (var c in onDamageEv)
         {
@@ -67,10 +84,6 @@ public class EntityHealth : MonoBehaviour
 
         if (attacker != null)
         {
-            critPer = attacker.stat.GetResultValue("critPer");
-            critMul = attacker.stat.GetResultValue("critMul");
-            inc = attacker.stat.GetResultValue("increaseDamage");
-
             foreach (var c in attacker.onGiveDamageEv)
             {
                 c.Invoke(ctx);
@@ -82,17 +95,8 @@ public class EntityHealth : MonoBehaviour
             return;
         }
 
-        float dmg = ctx.damage * (1 + stat.GetResultValue("hurtDamage") / 100) * (1 + inc / 100);
-
-        if (UnityEngine.Random.Range(0, 100) <= critPer)
-            dmg *= 1 + critMul / 100;
-
-        dmg -= stat.GetResultValue("defense");
-
-        if (dmg < 0)
-            dmg = 0;
-
-        health -= dmg;
+        if (!isKarma)
+            health -= dmg;
 
         if (health <= 0)
         {

@@ -367,7 +367,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -768,7 +768,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     size: {x: 3, y: 3}
     drawGizmos: 1
-    karmaAmount: 5
+    isKarmaAttack: 1
   retreatTime: 0.6
   bossbar: {fileID: 1147242102}
 --- !u!95 &534865758

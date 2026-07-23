@@ -10,7 +10,7 @@ public struct AttackRange
 
     public bool drawGizmos;
 
-    public int karmaAmount;
+    public bool isKarmaAttack;
 }
 
 public class PlayerBattle : MonoBehaviour
@@ -48,7 +48,8 @@ public class PlayerBattle : MonoBehaviour
         if(ctx.canceled)
             return;
         indicator.IndicateDamage(ctx.damage,transform.position+new Vector3(0,1),Color.red);
-        karma = Mathf.Min(karma + ctx.karmaAmount, MaxKarma);
+        if (ctx.karmaAmount > 0)
+            karma = Mathf.Min(karma + Mathf.CeilToInt(ctx.karmaAmount), MaxKarma);
     }
 
     void Update(){
