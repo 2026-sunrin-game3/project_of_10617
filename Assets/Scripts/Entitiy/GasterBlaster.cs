@@ -19,7 +19,10 @@ public class GasterBlaster : MonoBehaviour
         attacker = attackerHealth;
         targetMask = mask;
 
-        float angle = Mathf.Atan2(fireDir.y, fireDir.x) * Mathf.Rad2Deg;
+        // The skull art faces left (mouth opens toward -X), not along
+        // transform.right, so offset by 180 to line the mouth - and the
+        // beam, which fires along transform.right - up with fireDir.
+        float angle = Mathf.Atan2(fireDir.y, fireDir.x) * Mathf.Rad2Deg + 180f;
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
         StartCoroutine(FireRoutine());

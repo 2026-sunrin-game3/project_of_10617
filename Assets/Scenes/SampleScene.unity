@@ -700,7 +700,7 @@ MonoBehaviour:
   bonePrefab: {fileID: 0}
   boneSpawnPoint: {fileID: 0}
   boneCooldown: 5
-  blasterPrefab: {fileID: 0}
+  blasterPrefab: {fileID: 8400000000000004, guid: 9d8c44cb670d489c810192f01a4100b9, type: 3}
   blasterSpawnPoint: {fileID: 0}
   blasterCooldown: 7
   maxDodges: 23
