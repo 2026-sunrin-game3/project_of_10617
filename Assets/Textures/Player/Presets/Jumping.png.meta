@@ -1,43 +1,37 @@
 fileFormatVersion: 2
-guid: 9ace2f3071baa5c4d872f2df25a83294
+guid: 8d1e27ba2e746024384ff839c9f5d912
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3643998761827717319
-    second: Running_0
+      213: -4312366431063467818
+    second: Jumping_0
   - first:
-      213: -4707866458138886681
-    second: Running_1
+      213: -4048530547193403679
+    second: Jumping_1
   - first:
-      213: -7457498982976366407
-    second: Running_2
+      213: 2826979704478040783
+    second: Jumping_2
   - first:
-      213: -5594891616951461250
-    second: Running_3
+      213: 5907000883226147584
+    second: Jumping_3
   - first:
-      213: 2398275797733112376
-    second: Running_4
+      213: -6258145227301590787
+    second: Jumping_4
   - first:
-      213: -6865345740338609477
-    second: Running_5
+      213: 722731012742800968
+    second: Jumping_5
   - first:
-      213: -4611400358306370047
-    second: Running_6
+      213: 613896819931920705
+    second: Jumping_6
   - first:
-      213: -3366806091697730171
-    second: Running_7
+      213: -9125459030462519034
+    second: Jumping_7
   - first:
-      213: 5294525408286821128
-    second: Running_8
+      213: -4537684021541712226
+    second: Jumping_8
   - first:
-      213: 3322434517264523616
-    second: Running_9
-  - first:
-      213: 6497241835817499410
-    second: Running_10
-  - first:
-      213: 8344637379857900910
-    second: Running_11
+      213: -5426529818256287668
+    second: Jumping_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -70,7 +64,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -108,7 +102,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,295 +123,225 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Running_0
+      name: Jumping_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 49
         y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 26
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93fab4fce6aed6dc0800000000000000
-      internalID: -3643998761827717319
+      spriteID: 6d8942f24956724c0800000000000000
+      internalID: -4312366431063467818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running_1
+      name: Jumping_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 175
         y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7edb7a0566c4aaeb0800000000000000
-      internalID: -4707866458138886681
+      spriteID: 1e62838daeab0d7c0800000000000000
+      internalID: -4048530547193403679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running_2
+      name: Jumping_2
       rect:
         serializedVersion: 2
-        x: 256
+        x: 302
         y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 38
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b85bdebf24a18890800000000000000
-      internalID: -7457498982976366407
+      spriteID: fc207a030137b3720800000000000000
+      internalID: 2826979704478040783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running_3
+      name: Jumping_3
       rect:
         serializedVersion: 2
-        x: 384
+        x: 420
         y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e7a1cc6a7b3fa52b0800000000000000
-      internalID: -5594891616951461250
+      spriteID: 00bfc94b102e9f150800000000000000
+      internalID: 5907000883226147584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running_4
+      name: Jumping_4
       rect:
         serializedVersion: 2
-        x: 512
+        x: 558
         y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83a7c45a123684120800000000000000
-      internalID: 2398275797733112376
+      spriteID: df8e1e5a21a9629a0800000000000000
+      internalID: -6258145227301590787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running_5
+      name: Jumping_5
       rect:
         serializedVersion: 2
-        x: 640
+        x: 691
         y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 49
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb240ee5c6469b0a0800000000000000
-      internalID: -6865345740338609477
+      spriteID: 84661b2e608a70a00800000000000000
+      internalID: 722731012742800968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running_6
+      name: Jumping_6
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 797
+        y: 5
+        width: 43
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 10e2a0e6ec30100c0800000000000000
-      internalID: -4611400358306370047
+      spriteID: 149b8c8b7eff48800800000000000000
+      internalID: 613896819931920705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running_7
+      name: Jumping_7
       rect:
         serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 932
+        y: 3
+        width: 31
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58d4cbc92b3b641d0800000000000000
-      internalID: -3366806091697730171
+      spriteID: 609a6ec4c5bdb5180800000000000000
+      internalID: -9125459030462519034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running_8
+      name: Jumping_8
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 1064
         y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 29
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 80b4737aecee97940800000000000000
-      internalID: 5294525408286821128
+      spriteID: e9e4a019c68e601c0800000000000000
+      internalID: -4537684021541712226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running_9
+      name: Jumping_9
       rect:
         serializedVersion: 2
-        x: 1152
+        x: 1194
         y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 37
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0616c072798ab1e20800000000000000
-      internalID: 3322434517264523616
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Running_10
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 21b75bb9607da2a50800000000000000
-      internalID: 6497241835817499410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Running_11
-      rect:
-        serializedVersion: 2
-        x: 1408
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e6560e53c7b1ec370800000000000000
-      internalID: 8344637379857900910
+      spriteID: c48d4cb91e711b4b0800000000000000
+      internalID: -5426529818256287668
       vertices: []
       indices: 
       edges: []
@@ -426,7 +350,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6be35d9ae4373f24ca6e10434588471d
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -434,22 +358,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Running_0: -3643998761827717319
-      Running_1: -4707866458138886681
-      Running_10: 6497241835817499410
-      Running_11: 8344637379857900910
-      Running_2: -7457498982976366407
-      Running_3: -5594891616951461250
-      Running_4: 2398275797733112376
-      Running_5: -6865345740338609477
-      Running_6: -4611400358306370047
-      Running_7: -3366806091697730171
-      Running_8: 5294525408286821128
-      Running_9: 3322434517264523616
+      Jumping_0: -4312366431063467818
+      Jumping_1: -4048530547193403679
+      Jumping_2: 2826979704478040783
+      Jumping_3: 5907000883226147584
+      Jumping_4: -6258145227301590787
+      Jumping_5: 722731012742800968
+      Jumping_6: 613896819931920705
+      Jumping_7: -9125459030462519034
+      Jumping_8: -4537684021541712226
+      Jumping_9: -5426529818256287668
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
