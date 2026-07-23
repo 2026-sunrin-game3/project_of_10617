@@ -8,9 +8,9 @@ public class GasterBlaster : MonoBehaviour
     [SerializeField] Vector2 beamSize = new Vector2(22f, 1.2f);
     [SerializeField] SpriteRenderer beamVisual;
     // Where the mouth actually opens, in the skull art's native (unflipped,
-    // snout-left) local space, relative to the sprite's center pivot - so
+    // snout-right) local space, relative to the sprite's center pivot - so
     // the beam starts from inside the jaw instead of the skull's center.
-    [SerializeField] Vector2 muzzleOffset = new Vector2(-1.15f, -0.57f);
+    [SerializeField] Vector2 muzzleOffset = new Vector2(1.15f, -0.57f);
 
     Transform target;
     Vector2 fireDir = Vector2.right;
@@ -50,12 +50,11 @@ public class GasterBlaster : MonoBehaviour
     {
         fireDir = target.position.x > transform.position.x ? Vector2.right : Vector2.left;
 
-        // The skull art faces left (snout toward -X) by default. A 180-degree
-        // rotation would mirror it AND flip it upside down (a Z rotation is a
-        // point reflection, not a mirror), so use flipX to mirror left/right
-        // only, and keep the beam oriented off fireDir directly rather than
-        // off the transform, which never actually rotates.
-        sprite.flipX = fireDir.x > 0;
+        // Every previous attempt assumed the skull art faces left by
+        // default and flipped when firing right - and it was reportedly
+        // still backwards each time, so the art's actual default must be
+        // snout-right: flip only when firing left instead.
+        sprite.flipX = fireDir.x < 0;
     }
 
     IEnumerator FireRoutine()

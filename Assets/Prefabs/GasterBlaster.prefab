@@ -110,7 +110,7 @@ MonoBehaviour:
   fireTime: 0.3
   beamSize: {x: 22, y: 1.2}
   beamVisual: {fileID: 8400000000000008}
-  muzzleOffset: {x: -1.15, y: -0.57}
+  muzzleOffset: {x: 1.15, y: -0.57}
 --- !u!95 &8400000000000005
 Animator:
   serializedVersion: 7
