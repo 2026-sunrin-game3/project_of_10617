@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 // Added to the player at runtime by Boss when it first casts gravity
@@ -8,6 +9,11 @@ using UnityEngine;
 public class PlayerGravityStatus : MonoBehaviour
 {
     [SerializeField] Color tintColor = new Color(0.2f, 0.5f, 1f, 1f);
+    // Safety net so the tint always clears even if no collision ever
+    // qualifies as a "block" (e.g. launched off a ledge with nothing to
+    // land on nearby) - the tint should only ever last as long as the
+    // flight itself.
+    [SerializeField] float maxTintDuration = 1.2f;
 
     // Added at runtime (never present in the scene file), so there is no
     // Inspector to configure this in - resolve the ground/wall layer by name
@@ -17,6 +23,7 @@ public class PlayerGravityStatus : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer sprite;
     Color originalColor;
+    Coroutine tintTimeout;
 
     public bool IsActive { get; private set; }
 
@@ -33,6 +40,16 @@ public class PlayerGravityStatus : MonoBehaviour
         IsActive = true;
         sprite.color = tintColor;
         rigid.linearVelocity = direction.normalized * speed;
+
+        if (tintTimeout != null)
+            StopCoroutine(tintTimeout);
+        tintTimeout = StartCoroutine(EndAfter(maxTintDuration));
+    }
+
+    IEnumerator EndAfter(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        EndGravityLaunch();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -66,8 +83,17 @@ public class PlayerGravityStatus : MonoBehaviour
 
     void EndGravityLaunch()
     {
+        if (!IsActive)
+            return;
+
         IsActive = false;
         sprite.color = originalColor;
         rigid.linearVelocity = Vector2.zero;
+
+        if (tintTimeout != null)
+        {
+            StopCoroutine(tintTimeout);
+            tintTimeout = null;
+        }
     }
 }
