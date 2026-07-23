@@ -76,12 +76,22 @@ public class GasterBlaster : MonoBehaviour
 
         Vector2 center = muzzlePos + fireDir * beamSize.x * 0.5f;
 
+        // TEMPORARY debug instrumentation: draws the actual query box live
+        // (red wireframe, visible in the Scene view even while not selected)
+        // and logs hit counts to the Console, so the real cause of "no
+        // damage" shows up as data instead of another guess.
+        debugActive = true;
+        debugCenter = center;
+        debugAngle = angle;
+
         float elapsed = 0f;
         while (elapsed < beamDuration)
         {
             var hits = Physics2D.OverlapBoxAll(center, beamSize, angle, targetMask);
+            Debug.Log($"[GasterBlaster] tick: hits={hits.Length} center={center} size={beamSize} angle={angle} mask={targetMask.value}");
             foreach (var hit in hits)
             {
+                Debug.Log($"[GasterBlaster]   hit: {hit.gameObject.name} layer={hit.gameObject.layer} hasEntityHealth={hit.GetComponent<EntityHealth>() != null}");
                 EntityHealth hp = hit.GetComponent<EntityHealth>();
                 if (hp != null)
                     hp.GetDamage(damage, attacker);
@@ -91,7 +101,24 @@ public class GasterBlaster : MonoBehaviour
             elapsed += damageTickInterval;
         }
 
+        debugActive = false;
         Destroy(gameObject);
+    }
+
+    bool debugActive;
+    Vector2 debugCenter;
+    float debugAngle;
+
+    void OnDrawGizmos()
+    {
+        if (!debugActive)
+            return;
+
+        Gizmos.color = Color.red;
+        Matrix4x4 oldMatrix = Gizmos.matrix;
+        Gizmos.matrix = Matrix4x4.TRS(debugCenter, Quaternion.Euler(0, 0, debugAngle), Vector3.one);
+        Gizmos.DrawWireCube(Vector3.zero, new Vector3(beamSize.x, beamSize.y, 0.1f));
+        Gizmos.matrix = oldMatrix;
     }
 
     void OnDrawGizmosSelected()
