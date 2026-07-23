@@ -9,9 +9,9 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] LayerMask groundMask_;
     [SerializeField] float groundDist_ = 0.5f;
     public float atkCool;
-    [SerializeField] LayerMask enemyMask;
+    [SerializeField] protected LayerMask enemyMask;
     [SerializeField] DamageIndicator indicator;
-    void Start()
+    protected virtual void Start()
     {
         health = GetComponent<EntityHealth>();
         stat = GetComponent<EntityStat>();
