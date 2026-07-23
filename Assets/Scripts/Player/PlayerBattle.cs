@@ -72,9 +72,15 @@ public class PlayerBattle : MonoBehaviour
             karmaTickTimer = 0;
         }
 
-        healthbar.value = health.health / health.maxHealth;
+        float trueRatio = health.health / health.maxHealth;
+        healthbar.value = trueRatio;
         if (krFill != null)
-            krFill.fillAmount = Mathf.Min(1, (health.health + karma) / health.maxHealth);
+        {
+            float karmaRatio = Mathf.Min(1f, (health.health + karma) / health.maxHealth);
+            RectTransform rt = krFill.rectTransform;
+            rt.anchorMin = new Vector2(trueRatio, 0f);
+            rt.anchorMax = new Vector2(karmaRatio, 1f);
+        }
         if (atkCool > 0)
             atkCool -= Time.deltaTime*(1+stat.GetResultValue("atkSpeed")/100);
     }
