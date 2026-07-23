@@ -26,6 +26,7 @@ public class Boss : Enemy
     [SerializeField] GasterBlaster blasterPrefab;
     [SerializeField] Transform blasterSpawnPoint;
     [SerializeField] float blasterCooldown = 7f;
+    [SerializeField] float blasterSpawnDistance = 6f;
     float blasterTimer;
 
     [Header("Dodge (Miss)")]
@@ -166,9 +167,14 @@ public class Boss : Enemy
 
         float facing = player.transform.position.x > transform.position.x ? 1 : -1;
 
+        // Spawn it well clear of Sans's own sprite so the two don't overlap
+        // and the beam reads as coming from a separate object, clamped so it
+        // can't land outside the arena walls if Sans is near an edge.
+        float spawnX = Mathf.Clamp(transform.position.x + facing * blasterSpawnDistance, -arenaHalfWidth, arenaHalfWidth);
+
         Vector2 spawnPos = blasterSpawnPoint != null
             ? (Vector2)blasterSpawnPoint.position
-            : (Vector2)transform.position + Vector2.right * facing * 3f;
+            : new Vector2(spawnX, transform.position.y);
 
         // Hand it the player's Transform (not a one-shot direction) so it can
         // keep tracking them for the whole charge-up instead of committing to
