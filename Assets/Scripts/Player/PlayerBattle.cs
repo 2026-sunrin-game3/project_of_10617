@@ -58,14 +58,14 @@ public class PlayerBattle : MonoBehaviour
         // the combined tick interval shrinks as karma stacks up (and stretches
         // back out as it depletes), giving a fast-then-tapering drain instead
         // of a flat rate.
-        if (karma > 0 && health.health > 1)
+        if (karma > 0)
         {
             karmaTickTimer += Time.deltaTime;
             float tickInterval = karmaSecondsPerStack / karma;
             if (karmaTickTimer >= tickInterval)
             {
                 karmaTickTimer -= tickInterval;
-                health.health = Mathf.Max(1, health.health - 1);
+                health.ReduceHealth(1);
                 karma--;
             }
         }

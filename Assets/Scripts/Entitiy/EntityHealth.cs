@@ -48,6 +48,29 @@ public class EntityHealth : MonoBehaviour
         onDeathEv.Add(action);
     }
 
+    // For damage-over-time sources (like karma ticks) that apply health loss
+    // directly instead of going through GetDamage's attacker/crit/defense
+    // pipeline, but still need to trigger death consistently.
+    public void ReduceHealth(float amount)
+    {
+        if (isDeath)
+            return;
+
+        health -= amount;
+
+        if (health <= 0)
+        {
+            health = 0;
+            isDeath = true;
+
+            Context ctx = new Context();
+            foreach (var c in onDeathEv)
+            {
+                c.Invoke(ctx);
+            }
+        }
+    }
+
     public void GetDamage(float damage, EntityHealth attacker = null, bool isKarma = false)
     {
         if (isDeath)
