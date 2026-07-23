@@ -67,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -105,7 +105,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -133,12 +133,12 @@ TextureImporter:
       name: Miss_0
       rect:
         serializedVersion: 2
-        x: 132
-        y: 3
-        width: 201
-        height: 353
+        x: 0
+        y: 0
+        width: 465
+        height: 359
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: Miss_1
       rect:
         serializedVersion: 2
-        x: 589
-        y: 3
-        width: 217
-        height: 329
+        x: 465
+        y: 0
+        width: 465
+        height: 359
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -177,12 +177,12 @@ TextureImporter:
       name: Miss_2
       rect:
         serializedVersion: 2
-        x: 989
-        y: 251
-        width: 33
-        height: 9
+        x: 930
+        y: 0
+        width: 465
+        height: 359
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -199,12 +199,12 @@ TextureImporter:
       name: Miss_3
       rect:
         serializedVersion: 2
-        x: 1001
-        y: 240
-        width: 17
-        height: 11
+        x: 1395
+        y: 0
+        width: 465
+        height: 359
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -221,12 +221,12 @@ TextureImporter:
       name: Miss_4
       rect:
         serializedVersion: 2
-        x: 1004
-        y: 3
-        width: 281
-        height: 352
+        x: 1860
+        y: 0
+        width: 465
+        height: 359
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -239,143 +239,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Miss_5
-      rect:
-        serializedVersion: 2
-        x: 1194
-        y: 241
-        width: 168
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f665a5f929ee9760800000000000000
-      internalID: 7466661598651049715
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Miss_6
-      rect:
-        serializedVersion: 2
-        x: 1398
-        y: 3
-        width: 290
-        height: 332
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 56d6b2c706eaab780800000000000000
-      internalID: -8666422803497783963
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Miss_7
-      rect:
-        serializedVersion: 2
-        x: 1687
-        y: 241
-        width: 170
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 82e5bc6d6db8d6d70800000000000000
-      internalID: 9038033782045367848
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Miss_8
-      rect:
-        serializedVersion: 2
-        x: 1994
-        y: 3
-        width: 196
-        height: 353
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e999899b7d5fa6a0800000000000000
-      internalID: -6435822557050856992
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Miss_9
-      rect:
-        serializedVersion: 2
-        x: 963
-        y: 213
-        width: 33
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 00427d4c8f4e30d70800000000000000
-      internalID: 9008295436776580096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Miss_10
-      rect:
-        serializedVersion: 2
-        x: 990
-        y: 194
-        width: 21
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7e6003a0d30aac450800000000000000
-      internalID: 6109872028505868007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9cb86fae146d49041ba30ef18f162066
     internalID: 0
     vertices: []
     indices: 
@@ -383,19 +251,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":465.0,"y":359.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Miss_0: 413248917955918174
       Miss_1: -5467319326771189541
-      Miss_10: 6109872028505868007
       Miss_2: 401876147640993893
       Miss_3: -5172258718029712225
       Miss_4: 5724477442048208337
-      Miss_5: 7466661598651049715
-      Miss_6: -8666422803497783963
-      Miss_7: 9038033782045367848
-      Miss_8: -6435822557050856992
-      Miss_9: 9008295436776580096
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
