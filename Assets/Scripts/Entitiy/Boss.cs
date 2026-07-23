@@ -16,12 +16,6 @@ public class Boss : Enemy
     [SerializeField] float gravityCooldown = 5f;
     float gravityTimer;
 
-    [Header("Bone Skill (time based)")]
-    [SerializeField] Bone bonePrefab;
-    [SerializeField] Transform boneSpawnPoint;
-    [SerializeField] float boneCooldown = 5f;
-    float boneTimer;
-
     [Header("Gaster Blaster Skill (time based)")]
     [SerializeField] GasterBlaster blasterPrefab;
     [SerializeField] Transform blasterSpawnPoint;
@@ -93,7 +87,6 @@ public class Boss : Enemy
         if (retreatTimer > 0)
             retreatTimer -= Time.deltaTime;
 
-        boneTimer += Time.deltaTime;
         blasterTimer += Time.deltaTime;
         gravityTimer += Time.deltaTime;
 
@@ -112,12 +105,6 @@ public class Boss : Enemy
             retreatTimer = retreatTime;
             animator.SetTrigger("Attack");
             GravityManipulation();
-        }
-        else if (boneTimer >= boneCooldown)
-        {
-            boneTimer = 0;
-            animator.SetTrigger("Attack");
-            SummonBone();
         }
         else if (blasterTimer >= blasterCooldown)
         {
@@ -145,19 +132,6 @@ public class Boss : Enemy
         float facing = player.transform.position.x > transform.position.x ? 1 : -1;
         Vector2 launchDir = Random.value < 0.5f ? Vector2.up : new Vector2(facing, 0);
         playerGravity.ApplyGravityLaunch(launchDir, gravityLaunchSpeed);
-    }
-
-    void SummonBone()
-    {
-        if (bonePrefab == null)
-            return;
-
-        Vector2 spawnPos = boneSpawnPoint != null
-            ? (Vector2)boneSpawnPoint.position
-            : (Vector2)player.transform.position + Vector2.down * 3f;
-
-        Bone bone = Instantiate(bonePrefab, spawnPos, Quaternion.identity);
-        bone.Init(Vector2.up, stat.GetResultValue("attackDamage"), health, enemyMask);
     }
 
     void SummonGasterBlaster()

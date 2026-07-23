@@ -697,9 +697,6 @@ MonoBehaviour:
   retreatTime: 0.6
   gravityLaunchSpeed: 12
   gravityCooldown: 5
-  bonePrefab: {fileID: 8300000000000005, guid: 106ed3d527924a389725988562da3a45, type: 3}
-  boneSpawnPoint: {fileID: 0}
-  boneCooldown: 5
   blasterPrefab: {fileID: 8400000000000004, guid: 9d8c44cb670d489c810192f01a4100b9, type: 3}
   blasterSpawnPoint: {fileID: 0}
   blasterCooldown: 7

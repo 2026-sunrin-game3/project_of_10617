@@ -65,6 +65,10 @@ public class GasterBlaster : MonoBehaviour
         float angle = Mathf.Atan2(fireDir.y, fireDir.x) * Mathf.Rad2Deg;
         Vector2 muzzlePos = MuzzlePosition();
 
+        // The muzzle point is the CENTER of the beam (not its near edge) -
+        // Beam.png's pivot is center too, so both the sprite and the damage
+        // box extend the same +-halfSize around muzzlePos with no extra
+        // offset needed.
         if (beamVisual != null)
         {
             Vector2 nativeSize = beamVisual.sprite.bounds.size;
@@ -74,7 +78,7 @@ public class GasterBlaster : MonoBehaviour
             beamVisual.enabled = true;
         }
 
-        Vector2 center = muzzlePos + fireDir * beamSize.x * 0.5f;
+        Vector2 center = muzzlePos;
 
         // TEMPORARY debug instrumentation: draws the actual query box live
         // (red wireframe, visible in the Scene view even while not selected)
