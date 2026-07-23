@@ -6,6 +6,7 @@ public class GasterBlaster : MonoBehaviour
     [SerializeField] float chargeTime = 0.6f;
     [SerializeField] float fireTime = 0.3f;
     [SerializeField] Vector2 beamSize = new Vector2(6f, 1.2f);
+    [SerializeField] SpriteRenderer beamVisual;
 
     Vector2 fireDir;
     float damage;
@@ -39,8 +40,20 @@ public class GasterBlaster : MonoBehaviour
     {
         yield return new WaitForSeconds(chargeTime);
 
-        Vector2 center = (Vector2)transform.position + fireDir * beamSize.x * 0.5f;
         float angle = Mathf.Atan2(fireDir.y, fireDir.x) * Mathf.Rad2Deg;
+
+        if (beamVisual != null)
+        {
+            // Beam.png's pivot is left-center, so at scale 1 it already runs
+            // from this object's position outward along its own +X; just
+            // rotate it onto fireDir and stretch it to match beamSize.
+            Vector2 nativeSize = beamVisual.sprite.bounds.size;
+            beamVisual.transform.localScale = new Vector3(beamSize.x / nativeSize.x, beamSize.y / nativeSize.y, 1);
+            beamVisual.transform.rotation = Quaternion.Euler(0, 0, angle);
+            beamVisual.enabled = true;
+        }
+
+        Vector2 center = (Vector2)transform.position + fireDir * beamSize.x * 0.5f;
         var hits = Physics2D.OverlapBoxAll(center, beamSize, angle, targetMask);
         foreach (var hit in hits)
         {
