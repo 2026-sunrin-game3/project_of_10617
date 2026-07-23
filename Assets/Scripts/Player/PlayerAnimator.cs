@@ -27,7 +27,9 @@ public class PlayerAnimator : MonoBehaviour
             else if (axis.x < 0)
                 direction = -1;
 
-            transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x) * direction, transform.localScale.y);
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Abs(scale.x) * direction;
+            transform.localScale = scale;
         }
     }
     

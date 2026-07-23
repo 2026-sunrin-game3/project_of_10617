@@ -29,8 +29,7 @@ public class PlayerInput : MonoBehaviour{
     public void OnJump()
     {
         if (movement.Jump())
-           movement.Jump();
-        animator.Jump();
+            animator.Jump();
     }
 
     public void OnAttack()
