@@ -1,40 +1,31 @@
 fileFormatVersion: 2
-guid: 30a22d0860026a64d8678dc537f36954
+guid: c49beaf3ab6f7bc4e82f89dbb9c0e2b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 413248917955918174
-    second: Miss_0
+      213: -3397565852835310255
+    second: sprite_normalized_0
   - first:
-      213: -5467319326771189541
-    second: Miss_1
+      213: 1244276988169134103
+    second: sprite_normalized_1
   - first:
-      213: 401876147640993893
-    second: Miss_2
+      213: 8200223877537904671
+    second: sprite_normalized_2
   - first:
-      213: -5172258718029712225
-    second: Miss_3
+      213: -1953510390903320668
+    second: sprite_normalized_3
   - first:
-      213: 5724477442048208337
-    second: Miss_4
+      213: 3814277425206112194
+    second: sprite_normalized_4
   - first:
-      213: 7466661598651049715
-    second: Miss_5
+      213: 7547246498459100269
+    second: sprite_normalized_5
   - first:
-      213: -8666422803497783963
-    second: Miss_6
+      213: -1883265208011269206
+    second: sprite_normalized_6
   - first:
-      213: 9038033782045367848
-    second: Miss_7
-  - first:
-      213: -6435822557050856992
-    second: Miss_8
-  - first:
-      213: 9008295436776580096
-    second: Miss_9
-  - first:
-      213: 6109872028505868007
-    second: Miss_10
+      213: 4582813394517590958
+    second: sprite_normalized_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -81,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 136
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -130,13 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Miss_0
+      name: sprite_normalized_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 465
-        height: 359
+        width: 275
+        height: 334
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e59b39e83b72cb500800000000000000
-      internalID: 413248917955918174
+      spriteID: 15511c0abdb69d0d0800000000000000
+      internalID: -3397565852835310255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miss_1
+      name: sprite_normalized_1
       rect:
         serializedVersion: 2
-        x: 465
+        x: 275
         y: 0
-        width: 465
-        height: 359
+        width: 275
+        height: 334
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd8ec261a0e2024b0800000000000000
-      internalID: -5467319326771189541
+      spriteID: 710a30a045f844110800000000000000
+      internalID: 1244276988169134103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miss_2
+      name: sprite_normalized_2
       rect:
         serializedVersion: 2
-        x: 930
+        x: 550
         y: 0
-        width: 465
-        height: 359
+        width: 275
+        height: 334
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 56808df1a30c39500800000000000000
-      internalID: 401876147640993893
+      spriteID: f18b2538b2c0dc170800000000000000
+      internalID: 8200223877537904671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miss_3
+      name: sprite_normalized_3
       rect:
         serializedVersion: 2
-        x: 1395
+        x: 825
         y: 0
-        width: 465
-        height: 359
+        width: 275
+        height: 334
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f94fb6989127838b0800000000000000
-      internalID: -5172258718029712225
+      spriteID: 4af4c2d46acb3e4e0800000000000000
+      internalID: -1953510390903320668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miss_4
+      name: sprite_normalized_4
       rect:
         serializedVersion: 2
-        x: 1860
+        x: 1100
         y: 0
-        width: 465
-        height: 359
+        width: 275
+        height: 334
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,8 +224,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1dd250a67ed617f40800000000000000
-      internalID: 5724477442048208337
+      spriteID: 2cfa33cfb190fe430800000000000000
+      internalID: 3814277425206112194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_normalized_5
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 0
+        width: 275
+        height: 334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6427fc04b43db860800000000000000
+      internalID: 7547246498459100269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_normalized_6
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 0
+        width: 275
+        height: 334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aabd2a2754c4dd5e0800000000000000
+      internalID: -1883265208011269206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_normalized_7
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 0
+        width: 275
+        height: 334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea38f14608c699f30800000000000000
+      internalID: 4582813394517590958
       vertices: []
       indices: 
       edges: []
@@ -243,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9cb86fae146d49041ba30ef18f162066
+    spriteID: 19ab38164bc7adf44b7e13abf785afa1
     internalID: 0
     vertices: []
     indices: 
@@ -253,13 +310,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":465.0,"y":359.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":275.0,"y":334.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Miss_0: 413248917955918174
-      Miss_1: -5467319326771189541
-      Miss_2: 401876147640993893
-      Miss_3: -5172258718029712225
-      Miss_4: 5724477442048208337
+      sprite_normalized_0: -3397565852835310255
+      sprite_normalized_1: 1244276988169134103
+      sprite_normalized_2: 8200223877537904671
+      sprite_normalized_3: -1953510390903320668
+      sprite_normalized_4: 3814277425206112194
+      sprite_normalized_5: 7547246498459100269
+      sprite_normalized_6: -1883265208011269206
+      sprite_normalized_7: 4582813394517590958
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,40 +1,49 @@
 fileFormatVersion: 2
-guid: 30a22d0860026a64d8678dc537f36954
+guid: 1e62f057c5697a145a58be84bdedb2a7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 413248917955918174
-    second: Miss_0
+      213: 4675227916217719580
+    second: sprite_normalized (1)_0
   - first:
-      213: -5467319326771189541
-    second: Miss_1
+      213: -6207771504924973158
+    second: sprite_normalized (1)_1
   - first:
-      213: 401876147640993893
-    second: Miss_2
+      213: 3182694903602272990
+    second: sprite_normalized (1)_2
   - first:
-      213: -5172258718029712225
-    second: Miss_3
+      213: 8519185454278061286
+    second: sprite_normalized (1)_3
   - first:
-      213: 5724477442048208337
-    second: Miss_4
+      213: 4621813305670061444
+    second: sprite_normalized (1)_4
   - first:
-      213: 7466661598651049715
-    second: Miss_5
+      213: -7060687813714102722
+    second: sprite_normalized (1)_5
   - first:
-      213: -8666422803497783963
-    second: Miss_6
+      213: 7812686007657560252
+    second: sprite_normalized (1)_6
   - first:
-      213: 9038033782045367848
-    second: Miss_7
+      213: 837498366466279799
+    second: sprite_normalized (1)_7
   - first:
-      213: -6435822557050856992
-    second: Miss_8
+      213: -6057182153841702729
+    second: sprite_normalized (1)_8
   - first:
-      213: 9008295436776580096
-    second: Miss_9
+      213: -5014944060192224553
+    second: sprite_normalized (1)_9
   - first:
-      213: 6109872028505868007
-    second: Miss_10
+      213: 361537880398460107
+    second: sprite_normalized (1)_10
+  - first:
+      213: 7902671956016189298
+    second: sprite_normalized (1)_11
+  - first:
+      213: -1074177500396592228
+    second: sprite_normalized (1)_12
+  - first:
+      213: -7716495856811775629
+    second: sprite_normalized (1)_13
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -81,7 +90,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 136
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -130,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Miss_0
+      name: sprite_normalized (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 465
-        height: 359
+        width: 207
+        height: 488
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e59b39e83b72cb500800000000000000
-      internalID: 413248917955918174
+      spriteID: c1b9526f40fb1e040800000000000000
+      internalID: 4675227916217719580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miss_1
+      name: sprite_normalized (1)_1
       rect:
         serializedVersion: 2
-        x: 465
+        x: 207
         y: 0
-        width: 465
-        height: 359
+        width: 207
+        height: 488
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd8ec261a0e2024b0800000000000000
-      internalID: -5467319326771189541
+      spriteID: a97a72ad4b099d9a0800000000000000
+      internalID: -6207771504924973158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miss_2
+      name: sprite_normalized (1)_2
       rect:
         serializedVersion: 2
-        x: 930
+        x: 414
         y: 0
-        width: 465
-        height: 359
+        width: 207
+        height: 488
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,20 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 56808df1a30c39500800000000000000
-      internalID: 401876147640993893
+      spriteID: edad8a5f6243b2c20800000000000000
+      internalID: 3182694903602272990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miss_3
+      name: sprite_normalized (1)_3
       rect:
         serializedVersion: 2
-        x: 1395
+        x: 621
         y: 0
-        width: 465
-        height: 359
+        width: 207
+        height: 488
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,20 +220,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f94fb6989127838b0800000000000000
-      internalID: -5172258718029712225
+      spriteID: 6ec2be9b80a3a3670800000000000000
+      internalID: 8519185454278061286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miss_4
+      name: sprite_normalized (1)_4
       rect:
         serializedVersion: 2
-        x: 1860
+        x: 828
         y: 0
-        width: 465
-        height: 359
+        width: 207
+        height: 488
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1dd250a67ed617f40800000000000000
-      internalID: 5724477442048208337
+      spriteID: 48d43aec6baf32040800000000000000
+      internalID: 4621813305670061444
       vertices: []
       indices: 
       edges: []
@@ -243,7 +252,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9cb86fae146d49041ba30ef18f162066
+    spriteID: 0a880e6936f330d439f5beb017571826
     internalID: 0
     vertices: []
     indices: 
@@ -253,13 +262,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":465.0,"y":359.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":207.0,"y":488.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Miss_0: 413248917955918174
-      Miss_1: -5467319326771189541
-      Miss_2: 401876147640993893
-      Miss_3: -5172258718029712225
-      Miss_4: 5724477442048208337
+      sprite_normalized (1)_0: 4675227916217719580
+      sprite_normalized (1)_1: -6207771504924973158
+      sprite_normalized (1)_2: 3182694903602272990
+      sprite_normalized (1)_3: 8519185454278061286
+      sprite_normalized (1)_4: 4621813305670061444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

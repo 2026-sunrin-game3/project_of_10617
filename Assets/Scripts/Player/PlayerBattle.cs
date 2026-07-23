@@ -28,6 +28,8 @@ public class PlayerBattle : MonoBehaviour
     [SerializeField] LayerMask enemyMask;
     [SerializeField] float dashPower,dashTime;
     [SerializeField] DamageIndicator indicator;
+    [SerializeField] AudioClip attackSound;
+    AudioSource audioSource;
     public bool inDash;
     [SerializeField] Slider healthbar;
     [SerializeField] Image krFill;
@@ -40,6 +42,7 @@ public class PlayerBattle : MonoBehaviour
         health = GetComponent<EntityHealth>();
         stat = GetComponent<EntityStat>();
         movement = GetComponent<PlayerMovement>();
+        audioSource = GetComponent<AudioSource>();
 
         health.OnDamage(OnHurt);
     }
@@ -54,10 +57,6 @@ public class PlayerBattle : MonoBehaviour
     }
 
     void Update(){
-        // KARMA: each stack drains 1 HP every karmaSecondsPerStack seconds, so
-        // the combined tick interval shrinks as karma stacks up (and stretches
-        // back out as it depletes), giving a fast-then-tapering drain instead
-        // of a flat rate.
         if (karma > 0)
         {
             karmaTickTimer += Time.deltaTime;
@@ -80,11 +79,9 @@ public class PlayerBattle : MonoBehaviour
         {
             float karmaRatio = Mathf.Min(1f, (health.health + karma) / health.maxHealth);
             RectTransform rt = krFill.rectTransform;
-            // Read the slider's actual fill edge back (rather than recomputing
-            // trueRatio's position independently) so there's no seam/gap from
-            // the Slider's own internal fill-rect padding.
             float yellowEdge = healthbar.fillRect != null ? healthbar.fillRect.anchorMax.x : trueRatio;
-            rt.anchorMin = new Vector2(yellowEdge, 0f);
+            const float seamOverlap = 0.01f;
+            rt.anchorMin = new Vector2(Mathf.Max(0f, yellowEdge - seamOverlap), 0f);
             rt.anchorMax = new Vector2(karmaRatio, 1f);
         }
         if (atkCool > 0)
@@ -106,6 +103,9 @@ public class PlayerBattle : MonoBehaviour
         if (atkCool > 0)
             return;
         atkCool = 0.5f;
+
+        if (audioSource != null && attackSound != null)
+            audioSource.PlayOneShot(attackSound);
 
         var col = Physics2D.OverlapBoxAll((Vector2)transform.position + defaultAttack.offset,defaultAttack.size,0,enemyMask);
 
