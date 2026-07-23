@@ -768,6 +768,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     size: {x: 3, y: 3}
     drawGizmos: 1
+    karmaAmount: 5
   retreatTime: 0.6
   bossbar: {fileID: 1147242102}
 --- !u!95 &534865758

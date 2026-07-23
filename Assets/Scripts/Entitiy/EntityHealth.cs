@@ -15,6 +15,7 @@ public class EntityHealth : MonoBehaviour
         public float damage;
         public EntityHealth attacker;
         public bool canceled;
+        public int karmaAmount;
     }
 
     List<Action<Context>> onDamageEv = new();
@@ -47,7 +48,7 @@ public class EntityHealth : MonoBehaviour
         onDeathEv.Add(action);
     }
 
-    public void GetDamage(float damage, EntityHealth attacker = null)
+    public void GetDamage(float damage, EntityHealth attacker = null, int karmaAmount = 0)
     {
         if (isDeath)
             return;
@@ -55,6 +56,7 @@ public class EntityHealth : MonoBehaviour
         Context ctx = new Context();
         ctx.damage = damage;
         ctx.attacker = attacker;
+        ctx.karmaAmount = karmaAmount;
 
         float critPer = 0, critMul = 0, inc = 0;
 

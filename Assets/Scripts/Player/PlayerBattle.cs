@@ -9,6 +9,8 @@ public struct AttackRange
     public Vector2 offset, size;
 
     public bool drawGizmos;
+
+    public int karmaAmount;
 }
 
 public class PlayerBattle : MonoBehaviour
@@ -29,8 +31,9 @@ public class PlayerBattle : MonoBehaviour
     public bool inDash;
     [SerializeField] Slider healthbar;
     [SerializeField] Image krFill;
-    [SerializeField] float krDrainRate = 0.15f;
-    float displayedHealthRatio;
+    public const int MaxKarma = 40;
+    public int karma;
+    float karmaTickTimer;
     void Start()
     {
         health = GetComponent<EntityHealth>();
@@ -38,7 +41,6 @@ public class PlayerBattle : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
 
         health.OnDamage(OnHurt);
-        displayedHealthRatio = health.health / health.maxHealth;
     }
     void OnHurt(EntityHealth.Context ctx){
         if(inDash)
@@ -46,14 +48,32 @@ public class PlayerBattle : MonoBehaviour
         if(ctx.canceled)
             return;
         indicator.IndicateDamage(ctx.damage,transform.position+new Vector3(0,1),Color.red);
+        karma = Mathf.Min(karma + ctx.karmaAmount, MaxKarma);
     }
 
     void Update(){
-        float trueRatio = health.health / health.maxHealth;
-        healthbar.value = trueRatio;
-        displayedHealthRatio = Mathf.MoveTowards(displayedHealthRatio, trueRatio, krDrainRate * Time.deltaTime);
+        // KARMA: each stack drains 1 HP every 2 seconds, so the combined tick
+        // interval shrinks as karma stacks up (and stretches back out as it
+        // depletes), giving a fast-then-tapering drain instead of a flat rate.
+        if (karma > 0 && health.health > 1)
+        {
+            karmaTickTimer += Time.deltaTime;
+            float tickInterval = 2f / karma;
+            if (karmaTickTimer >= tickInterval)
+            {
+                karmaTickTimer -= tickInterval;
+                health.health = Mathf.Max(1, health.health - 1);
+                karma--;
+            }
+        }
+        else
+        {
+            karmaTickTimer = 0;
+        }
+
+        healthbar.value = health.health / health.maxHealth;
         if (krFill != null)
-            krFill.fillAmount = displayedHealthRatio;
+            krFill.fillAmount = Mathf.Min(1, (health.health + karma) / health.maxHealth);
         if (atkCool > 0)
             atkCool -= Time.deltaTime*(1+stat.GetResultValue("atkSpeed")/100);
     }
