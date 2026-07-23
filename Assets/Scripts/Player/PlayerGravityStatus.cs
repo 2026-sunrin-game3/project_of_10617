@@ -1,18 +1,29 @@
 using UnityEngine;
 
 // Added to the player at runtime by Boss when it first casts gravity
-// manipulation. Overrides normal movement with a launch in a fixed
-// direction, tints an outline blue while active, and stops on wall contact.
+// manipulation. Launches the player in a fixed direction (on top of, not
+// instead of, their normal control), rings them with a blue outline while
+// active, and stops the launch on wall contact.
 public class PlayerGravityStatus : MonoBehaviour
 {
+    static readonly Vector2[] OutlineOffsets =
+    {
+        Vector2.up, Vector2.down, Vector2.left, Vector2.right,
+        new Vector2(1, 1).normalized, new Vector2(1, -1).normalized,
+        new Vector2(-1, 1).normalized, new Vector2(-1, -1).normalized,
+    };
+
     [SerializeField] Color outlineColor = new Color(0.2f, 0.5f, 1f, 1f);
-    [SerializeField] float outlineScale = 1.15f;
-    [SerializeField] LayerMask wallMask;
+    [SerializeField] float outlineThickness = 0.12f;
+
+    // Added at runtime (never present in the scene file), so there is no
+    // Inspector to configure this in - resolve the ground/wall layer by name
+    // instead of relying on a serialized mask nobody can ever set.
+    LayerMask wallMask;
 
     Rigidbody2D rigid;
     SpriteRenderer sprite;
-    PlayerMovement movement;
-    SpriteRenderer outlineRenderer;
+    SpriteRenderer[] outlineRenderers;
 
     public bool IsActive { get; private set; }
 
@@ -20,17 +31,22 @@ public class PlayerGravityStatus : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        movement = GetComponent<PlayerMovement>();
+        wallMask = LayerMask.GetMask("ground");
 
-        GameObject outlineObj = new GameObject("GravityOutline");
-        outlineObj.transform.SetParent(transform, false);
-        outlineObj.transform.localScale = Vector3.one * outlineScale;
+        outlineRenderers = new SpriteRenderer[OutlineOffsets.Length];
+        for (int i = 0; i < OutlineOffsets.Length; i++)
+        {
+            GameObject outlineObj = new GameObject("GravityOutline_" + i);
+            outlineObj.transform.SetParent(transform, false);
+            outlineObj.transform.localPosition = OutlineOffsets[i] * outlineThickness;
 
-        outlineRenderer = outlineObj.AddComponent<SpriteRenderer>();
-        outlineRenderer.color = outlineColor;
-        outlineRenderer.sortingLayerID = sprite.sortingLayerID;
-        outlineRenderer.sortingOrder = sprite.sortingOrder - 1;
-        outlineRenderer.enabled = false;
+            SpriteRenderer renderer = outlineObj.AddComponent<SpriteRenderer>();
+            renderer.color = outlineColor;
+            renderer.sortingLayerID = sprite.sortingLayerID;
+            renderer.sortingOrder = sprite.sortingOrder - 1;
+            renderer.enabled = false;
+            outlineRenderers[i] = renderer;
+        }
     }
 
     void Update()
@@ -38,15 +54,17 @@ public class PlayerGravityStatus : MonoBehaviour
         if (!IsActive)
             return;
 
-        outlineRenderer.sprite = sprite.sprite;
-        outlineRenderer.flipX = sprite.flipX;
+        foreach (var renderer in outlineRenderers)
+        {
+            renderer.sprite = sprite.sprite;
+            renderer.flipX = sprite.flipX;
+        }
     }
 
     public void ApplyGravityLaunch(Vector2 direction, float speed)
     {
         IsActive = true;
-        outlineRenderer.enabled = true;
-        movement.enabled = false;
+        SetOutlineEnabled(true);
         rigid.linearVelocity = direction.normalized * speed;
     }
 
@@ -62,8 +80,13 @@ public class PlayerGravityStatus : MonoBehaviour
     void EndGravityLaunch()
     {
         IsActive = false;
-        outlineRenderer.enabled = false;
+        SetOutlineEnabled(false);
         rigid.linearVelocity = Vector2.zero;
-        movement.enabled = true;
+    }
+
+    void SetOutlineEnabled(bool value)
+    {
+        foreach (var renderer in outlineRenderers)
+            renderer.enabled = value;
     }
 }

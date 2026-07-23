@@ -13,6 +13,8 @@ public class Boss : Enemy
 
     [Header("Gravity Manipulation (close range)")]
     [SerializeField] float gravityLaunchSpeed = 12f;
+    [SerializeField] float gravityCooldown = 5f;
+    float gravityTimer;
 
     [Header("Bone Skill (time based)")]
     [SerializeField] Bone bonePrefab;
@@ -50,6 +52,8 @@ public class Boss : Enemy
         playerGravity = player.GetComponent<PlayerGravityStatus>();
         if (playerGravity == null)
             playerGravity = player.gameObject.AddComponent<PlayerGravityStatus>();
+
+        gravityTimer = gravityCooldown;
     }
 
     // Sans-style dodge: the first `maxDodges` hits are evaded outright, the
@@ -85,6 +89,7 @@ public class Boss : Enemy
 
         boneTimer += Time.deltaTime;
         blasterTimer += Time.deltaTime;
+        gravityTimer += Time.deltaTime;
 
         float dist = Vector2.Distance(player.transform.position, transform.position);
         bool moving = false;
@@ -95,8 +100,9 @@ public class Boss : Enemy
             Move(Vector2.right * away);
             moving = true;
         }
-        else if (dist <= attackDist && atkCool <= 0)
+        else if (dist <= attackDist && atkCool <= 0 && gravityTimer >= gravityCooldown)
         {
+            gravityTimer = 0;
             retreatTimer = retreatTime;
             animator.SetTrigger("Attack");
             GravityManipulation();
