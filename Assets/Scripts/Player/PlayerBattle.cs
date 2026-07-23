@@ -28,6 +28,8 @@ public class PlayerBattle : MonoBehaviour
     [SerializeField] LayerMask enemyMask;
     [SerializeField] float dashPower,dashTime;
     [SerializeField] DamageIndicator indicator;
+    [SerializeField] AudioClip attackSound;
+    AudioSource audioSource;
     public bool inDash;
     [SerializeField] Slider healthbar;
     [SerializeField] Image krFill;
@@ -40,6 +42,7 @@ public class PlayerBattle : MonoBehaviour
         health = GetComponent<EntityHealth>();
         stat = GetComponent<EntityStat>();
         movement = GetComponent<PlayerMovement>();
+        audioSource = GetComponent<AudioSource>();
 
         health.OnDamage(OnHurt);
     }
@@ -110,6 +113,9 @@ public class PlayerBattle : MonoBehaviour
         if (atkCool > 0)
             return;
         atkCool = 0.5f;
+
+        if (audioSource != null && attackSound != null)
+            audioSource.PlayOneShot(attackSound);
 
         var col = Physics2D.OverlapBoxAll((Vector2)transform.position + defaultAttack.offset,defaultAttack.size,0,enemyMask);
 

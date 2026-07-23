@@ -9,6 +9,7 @@ public class GasterBlaster : MonoBehaviour
     [SerializeField] Vector2 beamSize = new Vector2(22f, 1.2f);
     [SerializeField] SpriteRenderer beamVisual;
     [SerializeField] Transform muzzlePoint;
+    [SerializeField] AudioClip fireSound;
 
     Transform target;
     Vector2 fireDir = Vector2.right;
@@ -16,11 +17,13 @@ public class GasterBlaster : MonoBehaviour
     EntityHealth attacker;
     LayerMask targetMask;
     SpriteRenderer sprite;
+    AudioSource audioSource;
     bool fired;
 
     void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Init(Transform playerTarget, float dmg, EntityHealth attackerHealth, LayerMask mask)
@@ -61,6 +64,9 @@ public class GasterBlaster : MonoBehaviour
     {
         yield return new WaitForSeconds(chargeTime);
         fired = true;
+
+        if (audioSource != null && fireSound != null)
+            audioSource.PlayOneShot(fireSound);
 
         float angle = Mathf.Atan2(fireDir.y, fireDir.x) * Mathf.Rad2Deg;
         Vector2 muzzlePos = MuzzlePosition();
