@@ -35,7 +35,7 @@ public class PlayerInput : MonoBehaviour{
     public void OnAttack()
     {
         battle.Attack();
-        animator.Play("Attack1");
+        animator.Attack();
     }
 
     public void OnDash()

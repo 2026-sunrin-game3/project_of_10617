@@ -38,8 +38,8 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetTrigger("Jump");
     }
 
-    public void Play(string id)
+    public void Attack()
     {
-        animator.Play(id);
+        animator.SetTrigger("Attack");
     }
 }
