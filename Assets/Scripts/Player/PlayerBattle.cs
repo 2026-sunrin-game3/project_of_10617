@@ -31,6 +31,7 @@ public class PlayerBattle : MonoBehaviour
     public bool inDash;
     [SerializeField] Slider healthbar;
     [SerializeField] Image krFill;
+    [SerializeField] float karmaSecondsPerStack = 5f;
     public const int MaxKarma = 40;
     public int karma;
     float karmaTickTimer;
@@ -53,13 +54,14 @@ public class PlayerBattle : MonoBehaviour
     }
 
     void Update(){
-        // KARMA: each stack drains 1 HP every 2 seconds, so the combined tick
-        // interval shrinks as karma stacks up (and stretches back out as it
-        // depletes), giving a fast-then-tapering drain instead of a flat rate.
+        // KARMA: each stack drains 1 HP every karmaSecondsPerStack seconds, so
+        // the combined tick interval shrinks as karma stacks up (and stretches
+        // back out as it depletes), giving a fast-then-tapering drain instead
+        // of a flat rate.
         if (karma > 0 && health.health > 1)
         {
             karmaTickTimer += Time.deltaTime;
-            float tickInterval = 2f / karma;
+            float tickInterval = karmaSecondsPerStack / karma;
             if (karmaTickTimer >= tickInterval)
             {
                 karmaTickTimer -= tickInterval;
@@ -78,7 +80,11 @@ public class PlayerBattle : MonoBehaviour
         {
             float karmaRatio = Mathf.Min(1f, (health.health + karma) / health.maxHealth);
             RectTransform rt = krFill.rectTransform;
-            rt.anchorMin = new Vector2(trueRatio, 0f);
+            // Read the slider's actual fill edge back (rather than recomputing
+            // trueRatio's position independently) so there's no seam/gap from
+            // the Slider's own internal fill-rect padding.
+            float yellowEdge = healthbar.fillRect != null ? healthbar.fillRect.anchorMax.x : trueRatio;
+            rt.anchorMin = new Vector2(yellowEdge, 0f);
             rt.anchorMax = new Vector2(karmaRatio, 1f);
         }
         if (atkCool > 0)
