@@ -4,7 +4,8 @@ using UnityEngine;
 public class GasterBlaster : MonoBehaviour
 {
     [SerializeField] float chargeTime = 0.6666667f;
-    [SerializeField] float fireTime = 0.3f;
+    [SerializeField] float beamDuration = 2f;
+    [SerializeField] float damageTickInterval = 1f;
     [SerializeField] Vector2 beamSize = new Vector2(22f, 1.2f);
     [SerializeField] SpriteRenderer beamVisual;
     // Drag this child object (in the prefab, native/unflipped orientation)
@@ -91,15 +92,26 @@ public class GasterBlaster : MonoBehaviour
         }
 
         Vector2 center = muzzlePos + fireDir * beamSize.x * 0.5f;
-        var hits = Physics2D.OverlapBoxAll(center, beamSize, angle, targetMask);
-        foreach (var hit in hits)
+
+        // Deal damage repeatedly for as long as the beam is out instead of a
+        // single instant check - a one-shot check could miss the player
+        // entirely if they weren't standing in the box on that exact frame,
+        // which is why hits weren't registering before.
+        float elapsed = 0f;
+        while (elapsed < beamDuration)
         {
-            EntityHealth hp = hit.GetComponent<EntityHealth>();
-            if (hp != null)
-                hp.GetDamage(damage, attacker);
+            var hits = Physics2D.OverlapBoxAll(center, beamSize, angle, targetMask);
+            foreach (var hit in hits)
+            {
+                EntityHealth hp = hit.GetComponent<EntityHealth>();
+                if (hp != null)
+                    hp.GetDamage(damage, attacker);
+            }
+
+            yield return new WaitForSeconds(damageTickInterval);
+            elapsed += damageTickInterval;
         }
 
-        yield return new WaitForSeconds(fireTime);
         Destroy(gameObject);
     }
 
