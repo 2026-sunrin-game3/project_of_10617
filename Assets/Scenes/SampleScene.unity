@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityHealth
   health: 0
-  maxHealth: 100
+  maxHealth: 1
   isDeath: 0
 --- !u!212 &534865752
 SpriteRenderer:
@@ -1884,12 +1884,12 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -626698263, guid: 38f6c5153267ca049851780b12cd6e7c, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: 4c27879af2627bb4ba535bda4a863097, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.73, y: 3.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2050,13 +2050,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4323077, y: 0.56153846}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2.73, y: 3.59}
+    newSize: {x: 2.73, y: 3.59}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.64832646, y: 2.73341104}
+  m_Size: {x: 1.6483265, y: 2.733411}
   m_EdgeRadius: 0
 --- !u!114 &2145458454
 MonoBehaviour:
@@ -2086,6 +2086,8 @@ MonoBehaviour:
   indicator: {fileID: -7756483507888994229, guid: cac21ed8cfe01f649ad67260617432cf, type: 3}
   inDash: 0
   healthbar: {fileID: 1435852785}
+  krFill: {fileID: 0}
+  krDrainRate: 0.15
 --- !u!114 &2145458455
 MonoBehaviour:
   m_ObjectHideFlags: 0
