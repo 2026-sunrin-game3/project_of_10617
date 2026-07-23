@@ -80,7 +80,7 @@ public class EntityHealth : MonoBehaviour
             return;
         }
 
-        float dmg = ctx.damage * (1 + stat.GetResultValue("hurtDamage") / 100);
+        float dmg = ctx.damage * (1 + stat.GetResultValue("hurtDamage") / 100) * (1 + inc / 100);
 
         if (UnityEngine.Random.Range(0, 100) <= critPer)
             dmg *= 1 + critMul / 100;
@@ -90,7 +90,7 @@ public class EntityHealth : MonoBehaviour
         if (dmg < 0)
             dmg = 0;
 
-        health -= damage;
+        health -= dmg;
 
         if (health <= 0)
         {

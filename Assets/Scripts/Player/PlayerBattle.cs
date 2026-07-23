@@ -28,6 +28,9 @@ public class PlayerBattle : MonoBehaviour
     [SerializeField] DamageIndicator indicator;
     public bool inDash;
     [SerializeField] Slider healthbar;
+    [SerializeField] Image krFill;
+    [SerializeField] float krDrainRate = 0.15f;
+    float displayedHealthRatio;
     void Start()
     {
         health = GetComponent<EntityHealth>();
@@ -35,6 +38,7 @@ public class PlayerBattle : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
 
         health.OnDamage(OnHurt);
+        displayedHealthRatio = health.health / health.maxHealth;
     }
     void OnHurt(EntityHealth.Context ctx){
         if(inDash)
@@ -45,7 +49,11 @@ public class PlayerBattle : MonoBehaviour
     }
 
     void Update(){
-        healthbar.value = health.health / health.maxHealth;
+        float trueRatio = health.health / health.maxHealth;
+        healthbar.value = trueRatio;
+        displayedHealthRatio = Mathf.MoveTowards(displayedHealthRatio, trueRatio, krDrainRate * Time.deltaTime);
+        if (krFill != null)
+            krFill.fillAmount = displayedHealthRatio;
         if (atkCool > 0)
             atkCool -= Time.deltaTime*(1+stat.GetResultValue("atkSpeed")/100);
     }
